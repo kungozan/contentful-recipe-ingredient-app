@@ -1,6 +1,6 @@
 {
-  "name": "contentful",
-  "version": "0.1.0",
+  "name": "recipe-ingredient",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@contentful/app-sdk": "^3.33.0",
