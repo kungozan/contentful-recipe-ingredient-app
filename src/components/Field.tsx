@@ -12,6 +12,14 @@ const Field = ({ sdk }: FieldProps) => {
   const [measurement, setMeasurement] = useState('')
 
   useEffect(() => {
+    sdk.window.startAutoResizer()
+
+    return () => {
+      sdk.window.stopAutoResizer()
+    }
+  }, [sdk.window])
+
+  useEffect(() => {
     const detachIngredientChange = sdk.entry.fields.ingredient.onValueChanged(ingredient => {
       if (ingredient) {
         sdk.space.getEntry(ingredient.sys.id).then((ingredient: any) => {
